@@ -1,0 +1,17 @@
+App\SiteBundle\Entity\Block:
+    type: entity
+    table: blocks
+    repositoryClass: App\SiteBundle\Repository\BlockRepository
+    id:
+        id:
+            type: integer
+            generator: { strategy: AUTO }
+            unsigned: true
+    fields:
+        name:
+            type: string
+            length: 150
+    oneToMany:
+        sets:
+            targetEntity: Set
+            mappedBy: sets

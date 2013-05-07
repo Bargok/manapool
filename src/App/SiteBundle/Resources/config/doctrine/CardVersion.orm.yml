@@ -1,0 +1,32 @@
+App\SiteBundle\Entity\CardVersion:
+    type: entity
+    table: cards_versions
+    repositoryClass: App\SiteBundle\Repository\CardVersionRepository
+    id:
+        id:
+            type: integer
+            unsigned: true
+    fields:
+        cardId:
+            type: integer
+            unsigned: true
+            column: card_id
+        setId:
+            type: integer
+            unsigned: true
+            column: set_id
+    manyToOne:
+        card:
+          targetEntity: Card
+          joinColumn:
+            name: card_id
+            referencedColumnName: id
+        set:
+          targetEntity: Set
+          joinColumn:
+            name: set_id
+            referencedColumnName: id
+    oneToMany:
+        parts:
+          targetEntity: CardVersionPart
+          mappedBy: parts

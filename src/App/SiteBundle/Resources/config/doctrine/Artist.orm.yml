@@ -1,0 +1,18 @@
+App\SiteBundle\Entity\Artist:
+    type: entity
+    table: artists
+    repositoryClass: App\SiteBundle\Repository\ArtistRepository
+    id:
+        id:
+            type: integer
+            generator: { strategy: AUTO }
+            unsigned: true
+    fields:
+        name:
+            type: string
+            length: 150
+        count:
+            type: integer
+            unsigned: true
+            nullable: true
+

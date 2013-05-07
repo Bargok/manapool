@@ -1,0 +1,58 @@
+App\SiteBundle\Entity\CardVersionPart:
+    type: entity
+    table: cards_versions_parts
+    repositoryClass: App\SiteBundle\Repository\CardVersionPartRepository
+    id:
+        id:
+            type: integer
+            generator: { strategy: AUTO }
+    fields:
+        name:
+            type: string
+            size: 200
+        image:
+            type: string
+            size: 200
+        text:
+            type: string
+        flavor:
+            type: string
+        manaCost:
+            type: string
+            length: 10
+            column: mana_cost
+        convertedManaCost:
+            type: string
+            length: 3
+            column: converted_mana_cost
+        types:
+            type: string
+            length: 150
+        power:
+            type: string
+            length: 5
+        toughness:
+            type: string
+            length: 5
+        loyalty:
+            type: string
+            length: 5
+        number:
+            type: string
+            length: 5
+    manyToOne:
+        version:
+          targetEntity: CardVersion
+          joinColumn:
+            name: version_id
+            referencedColumnName: id
+        rarity:
+          targetEntity: Rarity
+          joinColumn:
+            name: rarity_id
+            referencedColumnName: id
+        artist:
+          targetEntity: Artist
+          joinColumn:
+            name: artist_id
+            referencedColumnName: id

@@ -1,0 +1,20 @@
+App\SiteBundle\Entity\Card:
+    type: entity
+    table: cards
+    repositoryClass: App\SiteBundle\Repository\CardRepository
+    id:
+        id:
+            type: integer
+            generator: { strategy: AUTO }
+            unsigned: true
+    fields:
+        name:
+            type: string
+            length: 150
+        slug:
+            type: string
+            length: 150
+    oneToMany:
+        versions:
+            targetEntity: CardVersion
+            mappedBy: card

@@ -1,0 +1,20 @@
+{
+  "name": "",
+  "css_prefix_text": "icon-",
+  "css_use_suffix": false,
+  "glyphs": [
+    {
+      "search": [
+        "search",
+        "find"
+      ],
+      "code": 128269,
+      "from": 128269,
+      "uid": "221947bea81f49a11b863c686a7bd235",
+      "css": "search",
+      "orig_css": "search",
+      "orig_code": 128269,
+      "src": "websymbols"
+    }
+  ]
+}

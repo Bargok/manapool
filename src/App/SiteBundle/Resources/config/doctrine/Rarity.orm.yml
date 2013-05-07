@@ -1,0 +1,22 @@
+App\SiteBundle\Entity\Rarity:
+    type: entity
+    table: rarities
+    repositoryClass: App\SiteBundle\Repository\RarityRepository
+    id:
+        id:
+            type: integer
+            generator: { strategy: AUTO }
+            unsigned: true
+    fields:
+        name:
+            type: string
+            length: 150
+        code:
+            type: string
+            length: 1
+    oneToMany:
+        cards:
+            targetEntity: Card
+            mappedBy: cards
+
+

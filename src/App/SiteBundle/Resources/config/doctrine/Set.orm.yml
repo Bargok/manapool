@@ -1,0 +1,34 @@
+App\SiteBundle\Entity\Set:
+    type: entity
+    table: sets
+    repositoryClass: App\SiteBundle\Repository\SetRepository
+    id:
+        id:
+            type: integer
+            generator: { strategy: AUTO }
+            unsigned: true
+    fields:
+        name:
+            type: string
+            length: 150
+        slug:
+            type: string
+            length: 150
+        code:
+            type: string
+            length: 3
+        date:
+            type: date
+        synchronized:
+            type: datetime
+            nullable: true
+        count:
+            type: integer
+            unsigned: true
+        promo:
+            type: boolean
+    manyToOne:
+        block:
+            targetEntity: Block
+        type:
+            targetEntity: Type
