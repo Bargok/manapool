@@ -24,12 +24,17 @@ twig:
     debug:            %kernel.debug%
     strict_variables: %kernel.debug%
 
+parameters:
+    assetic.filter.compass.images_dir: %kernel.root_dir%/../web/images
+    assetic.filter.compass.http_path:  /images
+
 assetic:
     debug:          %kernel.debug%
     use_controller: false
-    bundles:        [ ]
+    bundles:        [ AppSiteBundle ]
     filters:
-        cssrewrite: ~
+        sass:    ~
+        compass: ~
 
 doctrine:
     dbal:

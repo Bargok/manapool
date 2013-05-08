@@ -1,20 +1,24 @@
 <!doctype html>
 <html lang="nl">
 <head>
-    <title>MTG-Styleguide</title>
+    <title>{% block head_title %}MTG-Styleguide{% endblock %}</title>
 
-    <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="icon-font/css/fontello.css">
-    <link href='http://fonts.googleapis.com/css?family=Alegreya:700' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="css/layout.css">
+    {% block stylesheets %}
+        {% stylesheets filter="compass"
+            "@AppSiteBundle/Resources/assets/css/normalize.scss"
+            "@AppSiteBundle/Resources/assets/css/layout.scss"
+        %}
+        <link rel="stylesheet" href="{{ asset_url }}" />
+        {% endstylesheets %}
+
+        <link rel="stylesheet" href="icon-font/css/fontello.css">
+        <link href='http://fonts.googleapis.com/css?family=Alegreya:700' rel='stylesheet' type='text/css'>
+    {% endblock %}
+
 
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{ asset('css/normalize.css') }}">
-    <link rel="stylesheet" href="{{ asset('icon-font/css/fontello.css') }}">
-    <link href='http://fonts.googleapis.com/css?family=Alegreya:700' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="{{ asset('css/layout.css') }}">
 </head>
 <body>
 <div class="wrapper">
