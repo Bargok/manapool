@@ -8,172 +8,43 @@
             "@AppSiteBundle/Resources/assets/css/normalize.scss"
             "@AppSiteBundle/Resources/assets/css/layout.scss"
         %}
-        <link rel="stylesheet" href="{{ asset_url }}" />
+            <link rel="stylesheet" href="{{ asset_url }}" />
         {% endstylesheets %}
 
-        <link rel="stylesheet" href="icon-font/css/fontello.css">
+        <link rel="stylesheet" href="{{ asset('icon-font/css/fontello.css') }}">
         <link href='http://fonts.googleapis.com/css?family=Alegreya:700' rel='stylesheet' type='text/css'>
     {% endblock %}
 
-
     <meta charset="UTF-8">
+    <meta name="title" content="Manapool">
+    <meta name="keywords" content="Manapool">
+    <meta name="description" conntet="Manapool">
+
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-<div class="wrapper">
-    <h1 class="alpha">MTG-Styleguide</h1>
+    <div class="wrapper">
+        <h1 class="alpha">ManaPool</h1>
 
-    <div class="search">
-        <form action="{{ url('search') }}">
-            <input type="text" name="q" id="search-field" />
-            <button type="submit" class="icon-search"></button>
-        </form>
+        {% block search %}
+        <div class="search">
+            <form action="{{ url('search') }}">
+                <input type="text" name="q" id="search-field" placeholder="Kaartnaam..." />
+                <button type="submit" class="icon-search"></button>
+            </form>
+        </div>
+        {% endblock %}
+
+        {% block content %}{% endblock %}
     </div>
-
-    <span class="gamma list-title">5 resultaten gevonden voor "Gatekeepers"</span>
-
-    <ul class="list">
-        <li>
-            <div class="overview-item">
-                <div class="imageholder">
-                    <a href="#"><img src="{{ asset('images/temp/opal-lake-gatekeepers.jpg') }}" alt="" /></a>
-                </div>
-                <div class="content">
-                    <div class="header">
-                        <h2 class="beta"><a href="#">Opal Lake Gatekeepers</a></h2>
-                        <div class="mana-cost">
-                            <span class="colorless-mana">3</span>
-                            <span class="blue-mana">U</span>
-                        </div>
-                    </div>
-                    <div class="types">
-                        <span>Creature</span>
-                        <span class="seperator">-</span>
-                        <span>Vedalken Soldier</span>
-                    </div>
-                    <div class="text">
-                        <p>When Opal Lake Gatekeepers enters the battlefield, if you control two or more Gates, you may draw a card.</p>
-                    </div>
-                    <div class="power-toughness">
-                        <span>2/4</span>
-                    </div>
-                </div>
-            </div>
-        </li>
-        <li>
-            <div class="overview-item">
-                <div class="imageholder">
-                    <a href="#"><img src="{{ asset('images/temp/saruli-gatekeepers.jpg') }}" alt="" /></a>
-                </div>
-                <div class="content">
-                    <div class="header">
-                        <h2 class="beta"><a href="#">Saruli Gatekeepers</a></h2>
-                        <div class="mana-cost">
-                            <span class="colorless-mana">3</span>
-                            <span class="green-mana">G</span>
-                        </div>
-                    </div>
-                    <div class="types">
-                        <span>Creature</span>
-                        <span class="seperator">-</span>
-                        <span>Elf Warrior</span>
-                    </div>
-                    <div class="text">
-                        <p>When Saruli Gatekeepers enters the battlefield, if you control two or more Gates, you gain 7 life.</p>
-                    </div>
-                    <div class="power-toughness">
-                        <span>2/4</span>
-                    </div>
-                </div>
-            </div>
-        </li>
-        <li>
-            <div class="overview-item">
-                <div class="imageholder">
-                    <a href="#"><img src="{{ asset('images/temp/smelt-ward-gatekeepers.jpg') }}" alt="" /></a>
-                </div>
-                <div class="content">
-                    <div class="header">
-                        <h2 class="beta"><a href="#">Smelt-Ward Gatekeepers</a></h2>
-                        <div class="mana-cost">
-                            <span class="colorless-mana">3</span>
-                            <span class="red-mana">R</span>
-                        </div>
-                    </div>
-                    <div class="types">
-                        <span>Creature</span>
-                        <span class="seperator">-</span>
-                        <span>Human Warrior</span>
-                    </div>
-                    <div class="text">
-                        <p>When Smelt-Ward Gatekeepers enters the battlefield, if you control two or more Gates, gain control of target creature an opponent controls until end of turn. Untap that creature. It gains haste until end of turn.</p>
-                    </div>
-                    <div class="power-toughness">
-                        <span>2/4</span>
-                    </div>
-                </div>
-            </div>
-        </li>
-        <li>
-            <div class="overview-item">
-                <div class="imageholder">
-                    <a href="#"><img src="{{ asset('images/temp/sunspire-gatekeepers.jpg') }}" alt="" /></a>
-                </div>
-                <div class="content">
-                    <div class="header">
-                        <h2 class="beta"><a href="#">Sunspire Gatekeepers</a></h2>
-                        <div class="mana-cost">
-                            <span class="colorless-mana">3</span>
-                            <span class="white-mana">W</span>
-                        </div>
-                    </div>
-                    <div class="types">
-                        <span>Creature</span>
-                        <span class="seperator">-</span>
-                        <span>Human Soldier</span>
-                    </div>
-                    <div class="text">
-                        <p>When Sunspire Gatekeepers enters the battlefield, if you control two or more Gates, put a 2/2 white Knight creature token with vigilance onto the battlefield.</p>
-                    </div>
-                    <div class="power-toughness">
-                        <span>2/4</span>
-                    </div>
-                </div>
-            </div>
-        </li>
-        <li>
-            <div class="overview-item">
-                <div class="imageholder">
-                    <a href="#"><img src="{{ asset('images/temp/ubul-sar-gatekeepers.jpg') }}" alt="" /></a>
-                </div>
-                <div class="content">
-                    <div class="header">
-                        <h2 class="beta"><a href="#">Ubul Sar Gatekeepers</a></h2>
-                        <div class="mana-cost">
-                            <span class="colorless-mana">3</span>
-                            <span class="black-mana">B</span>
-                        </div>
-                    </div>
-                    <div class="types">
-                        <span>Creature</span>
-                        <span class="seperator">-</span>
-                        <span>Zombie Soldier</span>
-                    </div>
-                    <div class="text">
-                        <p>When Ubul Sar Gatekeepers enters the battlefield, if you control two or more Gates, target creature an opponent controls gets -2/-2 until end of turn.</p>
-                    </div>
-                    <div class="power-toughness">
-                        <span>2/4</span>
-                    </div>
-                </div>
-            </div>
-        </li>
-    </ul>
-
-</div>
-
-<script src="js/jquery-2.0.0.min.js"></script>
-<script src="js/init.js"></script>
+    {% block javascripts_footer %}
+        {% javascripts
+            "@AppSiteBundle/Resources/assets/js/jquery-2.0.0.min.js"
+            "@AppSiteBundle/Resources/assets/js/init.js"
+        %}
+            <script type="text/javascript" src="{{ asset_url }}"></script>
+        {% endjavascripts %}
+    {% endblock %}
 </body>
 </html>
