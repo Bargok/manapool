@@ -1,6 +1,11 @@
-app/cache
+pp/bootstrap.php.cache
+app/cache/*
+app/logs/*
 vendor
+web/bundles
+web/uploads
 .idea
+
 
 #################
 ## Eclipse
