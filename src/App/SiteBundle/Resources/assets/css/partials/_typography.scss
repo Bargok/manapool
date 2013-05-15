@@ -1,0 +1,35 @@
+// Typography
+
+p {
+    font-size: 1em;
+    line-height: 1.4em;
+}
+
+h1, .alpha,
+h2, .beta,
+h3, .gamma {
+    font-family: $customSerif;
+    display: inline-block;
+    
+    a:hover {
+        text-decoration: none;
+    }
+}
+
+h1,
+.alpha {
+    font-size: 3em;
+    margin: 0.5em -0.25em 0.5em 0;
+}
+
+h2,
+.beta {
+    font-size: 2em;
+    margin: 0.5em -0.25em 0.5em 0;
+}
+
+h3,
+.gamma {
+    font-size: 1.5em;
+    margin: 0.5em -0.25em 0.5em 0;
+}

@@ -1,0 +1,19 @@
+// Search
+
+.search {
+    background: $black;
+    border-radius: 5px;
+    padding: 1.25em;
+    margin: 0 0 0.8em 0;
+    position: relative;
+    max-width: 34em;
+    
+    .icon-search {
+        background: none;
+        border: none;
+        position: absolute;
+        top: 1.7em;
+        right: 1.2em;
+        color: $black;
+    }
+}

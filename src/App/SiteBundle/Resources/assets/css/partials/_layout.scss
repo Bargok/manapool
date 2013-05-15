@@ -1,0 +1,96 @@
+// Defaults
+
+* {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+html {
+    background: #eaf0f5;
+}
+
+body {
+    background: #eaf0f5;
+    color: $black;
+    font-size: 100%;
+    font-family: "Arial", sans-serif;
+    padding: 0 1.5em 3em 1.5em;
+}
+
+a {
+    color: $linkColor;
+    text-decoration: none;
+
+    &:hover {
+        color: $linkColorHover;
+    }
+}
+
+::selection {
+    background: $selectionColor;
+    color: $black;
+}
+
+::-moz-selection {
+    background: $selectionColor;
+    color: $black;
+}
+
+// Overview item
+
+.overview-item {
+    
+    .header {
+        margin: 0 0 0.5em 0;
+    }
+    
+    .imageholder {
+        display: inline-block;
+        vertical-align: top;
+        padding: 0 1em 0 0;
+        margin: 0 -0.25em 0 0;
+        width: 28%;
+        
+        img {
+            max-width: 100%;
+        }
+    }
+    
+    .content {
+        display: inline-block;
+        vertical-align: top;
+        margin: 0 -0.25em 0 0;
+        width: 72%        
+    }
+    
+    .beta {
+        margin: 0 0.3em 0 0;        
+    }
+} 
+
+// Item types
+
+.mana-cost {
+    display: inline-block;
+    margin: 0 0 -0.25em 0;
+
+    span {
+        font-weight: bold;
+        font-size: 1.25em;        
+    }
+}
+
+.types {
+    display: inline-block;
+    margin: 0 0.3em 0 0;
+
+    .seperator {
+        margin: 0 0.3em;        
+    }
+}
+
+.power-toughness {
+    font-weight: bold;
+    font-size: 1.25em;
+}
