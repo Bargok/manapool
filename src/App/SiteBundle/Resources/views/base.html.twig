@@ -1,18 +1,17 @@
 <!doctype html>
 <html lang="nl">
 <head>
-    <title>{% block head_title %}MTG-Styleguide{% endblock %}</title>
+    <title>{% block head_title %}Manapool{% endblock %}</title>
 
     {% block stylesheets %}
+        <link rel="stylesheet" href="{{ asset('icon-font/css/fontello.css') }}">
+        <link href='http://fonts.googleapis.com/css?family=Alegreya:700' rel='stylesheet' type='text/css'>
+
         {% stylesheets filter="compass"
-            "@AppSiteBundle/Resources/assets/css/normalize.scss"
             "@AppSiteBundle/Resources/assets/css/layout.scss"
         %}
             <link rel="stylesheet" href="{{ asset_url }}" />
         {% endstylesheets %}
-
-        <link rel="stylesheet" href="{{ asset('icon-font/css/fontello.css') }}">
-        <link href='http://fonts.googleapis.com/css?family=Alegreya:700' rel='stylesheet' type='text/css'>
     {% endblock %}
 
     <meta charset="UTF-8">
