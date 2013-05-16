@@ -1,6 +1,8 @@
 // Structure
 
 .wrapper {
-    max-width: 70em;
-    margin: 0 auto;
+    > .content {
+        max-width: 60em;
+        margin: 0 auto;
+    }
 }

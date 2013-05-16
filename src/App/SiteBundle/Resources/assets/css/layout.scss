@@ -4,6 +4,7 @@
 // Module imports
 
 @import "compass/css3";
+@import "compass/utilities";
 @import "modules/mixins";
 @import "modules/variables";
 
@@ -18,4 +19,5 @@
 @import "partials/typography";
 @import "partials/forms";
 @import "partials/lists";
+@import "partials/header";
 @import "partials/search";

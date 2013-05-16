@@ -7,15 +7,14 @@
 }
 
 html {
-    background: #eaf0f5;
+    background: $background;
 }
 
 body {
-    background: #eaf0f5;
+    background: $background;
     color: $black;
     font-size: 100%;
     font-family: "Arial", sans-serif;
-    padding: 0 1.5em 3em 1.5em;
 }
 
 a {

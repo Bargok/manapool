@@ -24,18 +24,23 @@
 </head>
 <body>
     <div class="wrapper">
-        <h1 class="alpha">ManaPool</h1>
-
-        {% block search %}
-        <div class="search">
-            <form action="{{ url('search') }}">
-                <input type="text" name="q" id="search-field" placeholder="Kaartnaam..." />
-                <button type="submit" class="icon-search"></button>
-            </form>
+        <header>
+            <div class="content">
+                <a href="{{ path("homepage") }}" class="logo">ManaPool</a>
+                {% block search %}
+                <div class="search">
+                    <form action="{{ url('search') }}">
+                        <input type="text" name="q" id="search-field" placeholder="Kaartnaam..." />
+                        <button type="submit" class="icon-search"></button>
+                    </form>
+                </div>
+                {% endblock %}
+            </div>
+        </header>
+        <div class="content">
+            {% block content %}{% endblock %}
         </div>
-        {% endblock %}
-
-        {% block content %}{% endblock %}
+        <footer></footer>    
     </div>
     {% block javascripts_footer %}
         {% javascripts
