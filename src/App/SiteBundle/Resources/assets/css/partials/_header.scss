@@ -1,0 +1,15 @@
+// Header
+
+header {
+    background: $black;
+    padding: 1.5em;
+    @include pie-clearfix();
+}
+
+.logo {
+    float: left;
+    font-family: $customSerif;
+    font-size: 2.5em;
+    line-height: 1em;
+    color: $white;
+}
