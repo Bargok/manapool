@@ -26,17 +26,26 @@
     <div class="wrapper">
         <header>
             <div class="content">
-                <a href="{{ path("homepage") }}" class="logo">ManaPool</a>
-                {% block search %}
-                <div class="search">
-                    <form action="{{ url('search') }}">
-                        <input type="text" name="q" id="search-field" placeholder="Kaartnaam..." />
-                        <button type="submit" class="icon-search"></button>
-                    </form>
-                </div>
-                {% endblock %}
+                <a href="{{ path("homepage") }}" class="logo">Manapool</a>
+                <nav class="primary-nav">
+                    <ul>
+                    	<li><a href="#">Alle Sets</a></li>
+                    	<li><a href="#">Blog</a></li>
+                    	<li><a href="#">Over Manapool</a></li>
+                    </ul>
+                </nav>
             </div>
         </header>
+        {% block search %}
+        <div class="search">
+            <form action="{{ url('search') }}">
+                <div class="field-container">
+                    <input type="text" name="q" id="search-field" placeholder="Kaartnaam..." />                
+                    <button type="submit" class="icon-search"></button>
+                </div>
+            </form>
+        </div>
+        {% endblock %}
         <div class="content">
             {% block content %}{% endblock %}
         </div>

@@ -1,4 +1,7 @@
-$background: #eaf0f5 !default;
+// Background
+
+$backgroundColor: #eaf0f5 !default;
+$backgroundImage: url('http://company.wizards.com/sites/default/files/AVR_1_1920x1080_Wallpaper_s412m0imfi.jpg') !default;
 
 // Colors
 
@@ -13,3 +16,7 @@ $white: #ffffff !default;
 // Typography
 
 $customSerif: "Alegreya", "Georgia" serif !default;
+
+// Structure
+
+$maxWidth: 60em;
