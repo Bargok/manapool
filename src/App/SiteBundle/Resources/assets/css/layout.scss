@@ -5,6 +5,7 @@
 
 @import "compass/css3";
 @import "compass/utilities";
+@import "compass/reset";
 @import "modules/mixins";
 @import "modules/variables";
 
@@ -20,4 +21,10 @@
 @import "partials/forms";
 @import "partials/lists";
 @import "partials/header";
+@import "partials/nav";
 @import "partials/search";
+
+
+
+
+

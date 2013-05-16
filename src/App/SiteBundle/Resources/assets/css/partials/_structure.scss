@@ -1,8 +1,11 @@
 // Structure
 
 .wrapper {
+    background: $backgroundImage center 5em;
+    min-height: 60em;
+
     > .content {
-        max-width: 60em;
+        max-width: $maxWidth;
         margin: 0 auto;
     }
 }
