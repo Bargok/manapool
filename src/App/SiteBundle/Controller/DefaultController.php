@@ -16,7 +16,12 @@ class DefaultController extends Controller
 
     public function searchAction()
     {
-        echo $this->getRequest()->get('q');
-        exit;
+        $term = $this->getRequest()->get('q');
+
+        $repository = $this->getDoctrine()->getRepository('AppSiteBundle:CardVersionPart');
+        $results = $repository->findBySearchTerm($term);
+
+
+        return $this->render('AppSiteBundle:Default:search.html.twig', array('results' => $results));
     }
 }
