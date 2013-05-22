@@ -19,7 +19,7 @@ class Artist
     /**
      * @var integer
      */
-    protected $count = 0;
+    protected $cardCount = 0;
 
     /**
      * Constructor method initializing the collections.
@@ -39,12 +39,12 @@ class Artist
     }
 
     /**
-     * @param integer $count
+     * @param integer $cardCount
      * @return Artist
      */
-    public function setCount($count)
+    public function setCardCount($cardCount)
     {
-        $this->count = (int) $count;
+        $this->cardCount = (int) $cardCount;
         return $this;
     }
 
@@ -59,7 +59,7 @@ class Artist
     /**
      * @return integer
      */
-    public function getCount()
+    public function getCardCount()
     {
         return $this->count;
     }

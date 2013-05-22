@@ -29,25 +29,20 @@ class SynchronizationCommand extends ContainerAwareCommand
     }
 
     /**
-     * Werkwijze:
-     * 1. Set ophalen welke moet worden gesynchronizeerd.
-     * 2. Ophalen van de kaarten uit gatherer.
-     * 3. Per kaart deze ophalen uit de database, en nakijken.
-     * 3.1 Bestaat deze? Ja - aanpassen, Nee - toevoegen.
-     * 4. Set markeren als gesynchornizeerd.
-     *
      * @param InputInterface $input
      * @param OutputInterface $output
      * @return int|null|void
      */
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-        $this->preloadRarities();
-
+      $this->preloadRarities();
         $path = realpath(dirname(dirname(dirname(dirname(dirname(__FILE__))))));
         $file = $path.'/data/';
 
+        /** @var \Doctrine\Bundle\DoctrineBundle\Registry $doctrine */
         $doctrine = $this->getContainer()->get('doctrine');
+
+
         $setRepository = $doctrine->getRepository('AppSiteBundle:Set');
         $cardRepository = $doctrine->getRepository('AppSiteBundle:Card');
         $cardVersionRepository = $doctrine->getRepository('AppSiteBundle:CardVersion');
@@ -110,10 +105,6 @@ class SynchronizationCommand extends ContainerAwareCommand
             $cardVersionPart->setNumber($card->number);
             $cardVersionPart->setConvertedManaCost($card->converted_manacost);
 
-            $image = sprintf($path.'/data/%s/%d.full.jpg', $set->getName(), $cardVersion->getId());
-            $imageTarget = sprintf($path.'/web/images/sets/%s/%d-%d.jpg', $set->getCode(), $cardVersion->getId(), 1);
-
-            copy($image, $imageTarget);
             $cardVersionPart->setImage(sprintf('%d-%d.jpg', $cardVersion->getId(), 1));
 
            $doctrine->getManager()->persist($cardVersionPart);

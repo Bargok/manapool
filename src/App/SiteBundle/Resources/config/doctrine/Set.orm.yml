@@ -17,12 +17,14 @@ App\SiteBundle\Entity\Set:
         code:
             type: string
             length: 3
-        date:
+        releaseDate:
+            column: release_date
             type: date
         synchronized:
             type: datetime
             nullable: true
-        count:
+        cardCount:
+            column: card_count
             type: integer
             unsigned: true
         promo:

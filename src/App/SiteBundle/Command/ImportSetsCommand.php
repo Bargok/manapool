@@ -40,6 +40,8 @@ class ImportSetsCommand extends ContainerAwareCommand
         $directoryIterator = new \DirectoryIterator($directory);
 
         foreach($directoryIterator as $file) {
+
+
             if ($file->isDot()) continue;
             if ($file->isDir()) continue;
 
@@ -56,18 +58,14 @@ class ImportSetsCommand extends ContainerAwareCommand
             $dateparts = explode("/", (string)$set->date);
             $isPromo = $set->is_promo === 'False' ? false : true;
 
-            $model->setDate(new \DateTime($dateparts[1].'-'.$dateparts[0].'-01'));
+            $model->setReleaseDate(new \DateTime($dateparts[1].'-'.$dateparts[0].'-01'));
             $model->setPromo($isPromo);
 
             $cards = $xml->xpath('cards/card');
 
-            $model->setCount(sizeof($cards));
+            $model->setCardCount(sizeof($cards));
 
             $this->getContainer()->get('doctrine')->getManager()->persist($model);
-
-            if (!file_exists(sprintf($path.'/web/images/sets/%s', $model->getCode()))) {
-                mkdir(sprintf($path.'/web/images/sets/%s', $model->getCode()));
-            }
         }
         $this->getContainer()->get('doctrine')->getManager()->flush();
 

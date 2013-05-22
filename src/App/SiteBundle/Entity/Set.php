@@ -27,12 +27,12 @@ class Set
     /**
      * @var integer
      */
-    protected $count;
+    protected $cardCount;
 
     /**
      * @var \DateTime
      */
-    protected $date;
+    protected $releaseDate;
 
     /**
      * @var \DateTime
@@ -95,22 +95,22 @@ class Set
     }
 
     /**
-     * @param integer $count
+     * @param integer $cardCount
      * @return \App\SiteBundle\Set
      */
-    public function setCount($count)
+    public function setCardCount($cardCount)
     {
-        $this->count = (int) $count;
+        $this->cardCount = (int) $cardCount;
         return $this;
     }
 
     /**
-     * @param \DateTime $date
+     * @param \DateTime $releaseDate
      * @return \App\SiteBundle\Set
      */
-    public function setDate(\DateTime $date)
+    public function setReleaseDate(\DateTime $releaseDate)
     {
-        $this->date = $date;
+        $this->releaseDate = $releaseDate;
         return $this;
     }
 
@@ -179,17 +179,17 @@ class Set
     /**
      * @return integer
      */
-    public function getCount()
+    public function getCardCount()
     {
-        return $this->count;
+        return $this->cardCount;
     }
 
     /**
      * @return \DateTime
      */
-    public function getDate()
+    public function getReleaseDate()
     {
-        return $this->date;
+        return $this->releaseDate;
     }
 
     /**
