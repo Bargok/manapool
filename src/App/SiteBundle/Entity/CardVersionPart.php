@@ -187,4 +187,50 @@ class CardVersionPart
     {
         return $this->version;
     }
+
+    public function getImage()
+    {
+        return $this->image;
+    }
+
+    public function getManaCost()
+    {
+        return $this->manaCost;
+    }
+
+    public function getConvertedManaCost()
+    {
+        return $this->convertedManaCost;
+    }
+
+    public function getTypes()
+    {
+        return $this->types;
+    }
+
+    public function getText()
+    {
+        return $this->text;
+    }
+
+    public function hasPowerOrToughness()
+    {
+        return (null !== $this->getPower() || null !== $this->getToughness());
+    }
+
+    public function getPower()
+    {
+        return $this->power;
+    }
+
+    public function getToughness()
+    {
+        return $this->toughness;
+    }
+
+    public function getImagePath()
+    {
+        $set = $this->getVersion()->getSet();
+        return sprintf('images/%s/%s', $set->getCode(), $this->getImage());
+    }
 }
