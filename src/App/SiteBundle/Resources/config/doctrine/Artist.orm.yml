@@ -11,8 +11,8 @@ App\SiteBundle\Entity\Artist:
         name:
             type: string
             length: 150
-        count:
+        cardCount:
             type: integer
             unsigned: true
             nullable: true
-
+            column: card_count
