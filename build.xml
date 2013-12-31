@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<project name="Manapool" default="build" basedir=".">
+    <target name="build">
+        <chmod file="app/logs" mode="0777" />
+        <chmod file="app/cache" mode="0777" />
+    </target>
+</project>

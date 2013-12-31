@@ -1,10 +1,10 @@
 parameters:
     database_driver: pdo_mysql
-    database_host: 192.168.2.203
+    database_host: localhost
     database_port:
-    database_name: wesley_personal
-    database_user: freshheads
-    database_password: ypo73mpv
+    database_name: manapool_dev
+    database_user: root
+    database_password: k03lk4st
     mailer_transport: smtp
     mailer_host: 127.0.0.1
     mailer_user: null
